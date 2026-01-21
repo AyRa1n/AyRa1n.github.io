@@ -1,0 +1,109 @@
+/* 首页副标题（打字机那行）字号 */
+#site-info .subtitle,
+#site-info #subtitle,
+#site-info .site-subtitle {
+  font-size: 34px !important;     /* 字变大 */
+  line-height: 1.25 !important;
+}
+
+#typed-lines .typed-line {
+  margin: 6px 0;
+}
+
+#typed-current {
+  margin: 6px 0;
+}
+
+/* 首页大标题：尽量覆盖 Butterfly 常见结构 */
+body #page-header #site-info #site-title,
+body #page-header #site-info #site-title a,
+body #page-header #site-info .site-title,
+body #page-header #site-info .site-title a {
+  font-size: 70px !important;  /* 改这里 */
+  line-height: 1.1 !important;
+}
+
+/* 首页字幕（多行）对齐 */
+#site-info #subtitle,
+#site-info .site-subtitle {
+  text-align: center !important;    /* 居中对齐 */
+  display: inline-block !important; /* 防止看起来歪 */
+  white-space: normal !important;
+  line-height: 1.35 !important;
+  font-size: 38px !important;       /* 三行字大小 */
+}
+
+/* 让整个字幕块在中间 */
+#site-info {
+  text-align: center !important;
+}
+
+/* 顶部头图区域允许放视频 */
+#page-header {
+  position: relative !important;
+  overflow: hidden;
+}
+
+/* 视频容器铺满 */
+#video-top-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* 视频铺满裁剪 */
+#video-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 让标题/文字层在视频上面 */
+#page-header #site-info,
+#page-header .page-header,
+#page-header .site-info {
+  position: relative;
+  z-index: 2;
+}
+
+/* 加暗色遮罩，避免字看不清（可调透明度） */
+#page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.25);
+  z-index: 1;
+}
+/* 让 page-header 能承载“背景层” */
+#page-header {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 视频背景层 */
+#page-header .video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#page-header .video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 确保顶部文字/按钮在视频上层 */
+#page-header #site-info,
+#page-header #page-info,
+#page-header .mask {
+  position: relative;
+  z-index: 1;
+}
+
+/* 如果你不想要主题自带的背景遮罩太黑，可以适当调淡 */
+#page-header::before {
+  opacity: 0.25;
+}
+
